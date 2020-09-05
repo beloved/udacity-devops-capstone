@@ -1,10 +1,5 @@
 
 pipeline {
-    environment {
-        registry = "afunderburg/web-image"
-        registryCredential = 'dockerhub'
-        dockerImage = ''
-      }
     agent any
     stages {
         stage('Lint HTML') {

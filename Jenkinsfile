@@ -20,7 +20,7 @@ pipeline {
                steps {
                    sh 'docker build -t afunderburg/web-image:v1 .'
                    sh 'docker run --name -d -p 80:80 afunderburg/web-image:v1'
-                   sh 'docker push afunderburg/web-image:v1'
+                  // sh 'docker push afunderburg/web-image:v1'
                }
            }
          stage('Security Scan') {

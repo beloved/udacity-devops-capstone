@@ -25,7 +25,7 @@ pipeline {
            }
          stage('Security Scan') {
               steps {
-                 aquaMicroscanner imageName: 'nginx:alpine', notCompleted: 'exit 1', onDisallowed: 'fail'
+                 aquaMicroscanner imageName: 'nginx:alpine', onDisallowed: 'fail'
               }
          }
 

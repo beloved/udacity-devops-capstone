@@ -23,11 +23,11 @@ pipeline {
                   // sh 'docker push afunderburg/web-image:v1'
                }
            }
-         stage('Security Scan') {
-              steps {
-                 aquaMicroscanner imageName: 'nginx:alpine', notCompliesCmd: 'exit 1', onDisallowed: 'fail'
-              }
-         }
+//          stage('Security Scan') {
+//               steps {
+//                  aquaMicroscanner imageName: 'nginx:alpine', notCompliesCmd: 'exit 1', onDisallowed: 'fail'
+//               }
+//          }
 
      }
 }

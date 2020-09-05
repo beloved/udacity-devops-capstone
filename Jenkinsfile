@@ -3,11 +3,11 @@ pipeline {
 
      agent any
 
-     environment {
-             imageName = 'afunderburg/web-image:v1'
-             registryCredentialSet = 'dockerhub'
-             ...
-          }
+//      environment {
+//              imageName = 'afunderburg/web-image:v1'
+//              registryCredentialSet = 'dockerhub'
+//              ...
+//           }
 
      stages {
 

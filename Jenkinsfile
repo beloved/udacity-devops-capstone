@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Image') {
               steps {
                   sh 'docker build -t afunderburg/web-image:v1 .'
-                  sh 'docker run --name web-image -d -p 80:80 afunderburg/web-image:v1'
+                  sh 'docker run --name temp-web-image -d -p 80:80 afunderburg/web-image:v1'
               }
         }
 
@@ -26,6 +26,11 @@ pipeline {
                     }
                }
          }
+         stage("Remove Docker images") {
+                       steps{
+                             sh "docker system prune"
+                       }
+                 }
 
      }
 }

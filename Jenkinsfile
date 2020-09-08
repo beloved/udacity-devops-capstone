@@ -33,10 +33,12 @@ pipeline {
                            sh 'kubectl config use-context arn:aws:eks:us-east-1:449105396446:cluster/devops-cluster'
                            sh "kubectl apply -f deploy.yml"
                            sh "kubectl set image deployments/cloud-devops-capstone cloud-devops-capstone=afunderburg/cloud-devops-capstone:latest"
+                           sh 'kubectl rollout status deployment cloud-devops-capstone'
                            sh "kubectl get nodes"
                            sh "kubectl get deployment"
                            sh "kubectl get pod"
                            sh "kubectl get service/cloud-devops-capstone"
+
                            }
                        }
                  }

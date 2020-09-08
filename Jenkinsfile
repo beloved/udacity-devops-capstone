@@ -36,7 +36,7 @@ pipeline {
                            sh 'kubectl rollout status deployment cloud-devops-capstone'
                            sh "kubectl get nodes"
                            sh "kubectl get deployment"
-                           sh "kubectl get pod"
+                           sh "kubectl get pod -w"
                            sh "kubectl get service/cloud-devops-capstone"
 
                            }

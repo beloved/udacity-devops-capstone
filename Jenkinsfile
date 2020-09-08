@@ -15,14 +15,14 @@ pipeline {
         }
         stage('Build Docker Image') {
               steps {
-                  sh 'docker build -t afunderburg/cloud-devops-capstone .'
+                  sh 'docker build -t afunderburg/cloud-devops-capstone:v1 .'
               }
         }
 
         stage('Push Docker Image') {
               steps {
                     withDockerRegistry([url: "", credentialsId: "dockerhub"]) {
-                        sh 'docker push afunderburg/cloud-devops-capstone'
+                        sh 'docker push afunderburg/cloud-devops-capstone:v1'
                     }
               }
         }
